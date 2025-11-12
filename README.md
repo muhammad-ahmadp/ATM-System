@@ -241,7 +241,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**[Your Name]**
+**[Muhammad Ahmad]**
 
 - GitHub: [@yourusername](https://github.com/muhammad-ahmadp)
 - LinkedIn: [Your Profile](https://linkedin.com/in/muhammad-ahmadcs)
