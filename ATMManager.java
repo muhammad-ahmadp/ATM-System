@@ -61,7 +61,7 @@ public class ATMManager {
         try {
             acc.deposit(amount);
             transactions.add(new Transaction("Deposit", accountId, amount, "Deposit completed"));
-            System.out.printf("✅ Deposit successful. New balance: %.2f%n", acc.getBalance());
+            System.out.printf("Deposit successful. New balance: %.2f%n", acc.getBalance());
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
@@ -84,7 +84,7 @@ public class ATMManager {
             transactions.add(new Transaction("Withdraw", accountId, amount, "Withdrawal completed"));
             System.out.printf("Withdrawal successful. New balance: %.2f%n", acc.getBalance());
         } catch (IllegalArgumentException e) {
-            System.out.println("❌ " + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
