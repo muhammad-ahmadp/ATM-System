@@ -1,99 +1,32 @@
-# 🏧 SimpleATM - Console-Based Banking System
+# SimpleATM - Console-Based Banking System
 
-A feature-rich, interactive ATM simulation built in Java that demonstrates core banking operations with a clean command-line interface.
+A feature-rich, interactive ATM simulation developed in Java that models core banking operations, including deposits, withdrawals, and secure transfers. This project demonstrates robust financial transaction logic, state management, and the use of a transaction history audit trail.
 
 [![Java](https://img.shields.io/badge/Java-11+-orange.svg)](https://www.java.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-## ✨ Features
+---
 
-- 🆕 **Account Creation** - Create new bank accounts with unique IDs
-- 💰 **Deposit Operations** - Add funds to any account
-- 💸 **Withdrawal System** - Withdraw money with balance verification
-- 🔄 **Money Transfers** - Transfer funds between accounts securely
-- 📊 **Account Overview** - View all accounts and their balances
-- 📝 **Transaction History** - Complete audit trail of all operations
-- ✅ **Input Validation** - Comprehensive error handling and validation
-- 🎨 **User-Friendly CLI** - Clean, interactive menu system
+## 1. Overview
 
-## 🚀 Quick Start
+The SimpleATM system simulates a basic banking environment, focusing on the integrity and security of financial transactions. It is designed to showcase the implementation of business rules critical to banking, such as preventing negative balances and ensuring all operations are recorded.
 
-### Prerequisites
-- Java Development Kit (JDK) 8 or higher
-- Any text editor or IDE (IntelliJ IDEA, Eclipse, VS Code)
+### Core Features
 
-### Installation
+*   **Account Management:** Creation and tracking of multiple bank accounts with unique IDs and balances.
+*   **Financial Transactions:** Secure implementation of Deposit, Withdrawal, and Transfer operations.
+*   **Transaction History:** A complete audit trail of all financial activities is recorded and viewable.
+*   **Balance Verification:** Logic to prevent withdrawals that would result in a negative account balance.
+*   **Data Integrity:** Comprehensive input validation and prevention of duplicate account IDs.
+*   **User Interface:** A clean, menu-driven Command Line Interface (CLI) for interactive use.
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/muhammad-ahmadp/simple-atm.git
-cd simple-atm
-```
+---
 
-2. **Compile the project**
-```bash
-javac *.java
-```
+## 2. Technical Architecture
 
-3. **Run the application**
-```bash
-java MainATM
-```
+The system is structured to separate the core account entity from the transaction records and the overall management logic, adhering to the Single Responsibility Principle.
 
-## 📖 Usage
-
-### Main Menu
-```
-========= Welcome to SimpleATM =========
-
-1. Create Account
-2. Deposit Money
-3. Withdraw Money
-4. Transfer Money
-5. Show All Accounts
-6. View Transaction History
-7. Exit
-```
-
-### Example Workflow
-
-#### 1. Create an Account
-```
-Enter choice: 1
-Enter Account ID: ACC001
-Enter Owner Name: John Doe
-Enter Initial Balance: 5000
-✅ Account created successfully!
-```
-
-#### 2. Deposit Money
-```
-Enter choice: 2
-Enter Account ID: ACC001
-Enter Deposit Amount: 2000
-✅ Deposit successful. New balance: 7000.00
-```
-
-#### 3. Withdraw Money
-```
-Enter choice: 3
-Enter Account ID: ACC001
-Enter Withdrawal Amount: 1500
-✅ Withdrawal successful. New balance: 5500.00
-```
-
-#### 4. Transfer Money
-```
-Enter choice: 4
-Enter Sender Account ID: ACC001
-Enter Receiver Account ID: ACC002
-Enter Transfer Amount: 1000
-✅ Transfer successful!
-Sender balance: 4500.00 | Receiver balance: 6000.00
-```
-
-## 🏗️ Project Structure
+### Project Structure
 
 ```
 simple-atm/
@@ -101,175 +34,110 @@ simple-atm/
 ├── Account.java          # Core account entity with operations
 ├── Transaction.java      # Transaction record model
 ├── ATMManager.java       # Business logic and account management
-├── MainATM.java          # Entry point with CLI interface
-└── README.md             # This file
+└── MainATM.java          # Entry point with CLI interface
 ```
 
-## 🔧 Technical Details
+### Key Classes and Responsibilities
 
-### Key Classes
-
-#### `Account`
-Represents a bank account with:
-- Unique account ID
-- Owner name
-- Balance tracking
-- Deposit, withdraw, and transfer operations
-- Input validation
-
-#### `Transaction`
-Records all system transactions:
-- Transaction type (Create, Deposit, Withdraw, Transfer)
-- Account ID
-- Amount
-- Details/description
-
-#### `ATMManager`
-Central management system:
-- Maintains all accounts
-- Tracks transaction history
-- Handles all banking operations
-- Provides search and display functionality
-
-#### `MainATM`
-User interface:
-- Interactive menu system
-- Input handling and validation
-- Error display and feedback
-
-## 🎯 Design Principles
-
-- ✅ **Encapsulation** - Private fields with public methods
-- ✅ **Validation** - Comprehensive input checking
-- ✅ **Error Handling** - Try-catch blocks and meaningful messages
-- ✅ **Single Responsibility** - Each class has one clear purpose
-- ✅ **User Experience** - Clear feedback and intuitive flow
-
-## 📊 Sample Output
-
-```
---- All Accounts ---
-Account ID   : ACC001
-Owner Name   : John Doe
-Balance      : 5000.00
---------------------------
-Account ID   : ACC002
-Owner Name   : Jane Smith
-Balance      : 3000.00
---------------------------
-
---- Transaction History ---
-Transaction Type: Create
-Account ID: ACC001
-Amount: 5000.00
-Details: New account created
-
-Transaction Type: Deposit
-Account ID: ACC001
-Amount: 2000.00
-Details: Deposit completed
-
-Transaction Type: Transfer
-Account ID: ACC001
-Amount: 1000.00
-Details: Transferred to ACC002
-```
-
-## 🛡️ Security Features
-
-- ✅ Prevents negative balances
-- ✅ Validates all inputs
-- ✅ Checks for duplicate account IDs
-- ✅ Prevents self-transfers
-- ✅ Handles insufficient balance gracefully
-
-## ⚠️ Known Limitations
-
-This is a learning project with the following limitations:
-
-- 📝 In-memory storage only (data lost on exit)
-- 🔐 No authentication or PIN system
-- 💾 No database persistence
-- 🌐 CLI-only interface
-- 📱 No multi-user concurrent access
-- 🔒 No encryption for sensitive data
-
-## 🔮 Future Enhancements
-
-- [ ] Add user authentication (PIN/password)
-- [ ] Implement file-based persistence
-- [ ] Add database integration (MySQL/PostgreSQL)
-- [ ] Create GUI with JavaFX
-- [ ] Add interest calculation
-- [ ] Implement account types (Savings, Checking)
-- [ ] Add transaction limits and fees
-- [ ] Generate account statements
-- [ ] Add multi-currency support
-- [ ] Implement loan management
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-Please ensure your code:
-- Follows Java naming conventions
-- Includes input validation
-- Has meaningful variable names
-- Includes comments for complex logic
-
-## 📚 Learning Objectives
-
-This project demonstrates:
-
-- ✅ Object-Oriented Programming concepts
-- ✅ Input validation and error handling
-- ✅ ArrayList usage and management
-- ✅ Scanner for user input
-- ✅ Method design and organization
-- ✅ Clean code practices
-- ✅ User interface design (CLI)
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👤 Author
-
-**[Muhammad Ahmad]**
-
-- GitHub: [@yourusername](https://github.com/muhammad-ahmadp)
-- LinkedIn: [Your Profile](https://linkedin.com/in/muhammad-ahmadcs)
-- Email: muhammadahmadseng@gmail.com
-
-## 🙏 Acknowledgments
-
-- Inspired by real-world banking systems
-- Built as a learning project for Java fundamentals
-- Thanks to the Java community for excellent documentation
-
-## 📧 Contact
-
-Have questions or suggestions? Feel free to:
-- Open an issue
-- Submit a pull request
-- Contact me directly
+| Class | Responsibility | Key Concepts Demonstrated |
+| :--- | :--- | :--- |
+| `Account.java` | Manages the balance and core operations (deposit, withdraw) for a single account. | Encapsulation, State Management, Financial Validation. |
+| `Transaction.java` | Models a single transaction event for auditing purposes. | Data Modeling, Audit Trail Implementation. |
+| `ATMManager.java` | Central repository for all accounts and transaction history. | Collection Management (`ArrayList`), Business Logic Orchestration. |
+| `MainATM.java` | Provides the interactive Command Line Interface (CLI). | User Interface Design, Input Handling, Exception Handling. |
 
 ---
 
-⭐ **If this project helped you learn, please give it a star!** ⭐
+## 3. Design Decisions
+
+The design prioritizes the security and reliability of financial operations, which are paramount in a banking system.
+
+*   **Defensive Withdrawal Logic:** The withdrawal method includes a critical check to ensure the account balance is sufficient before processing the transaction, preventing overdrafts.
+*   **Transaction Audit Trail:** Every operation (deposit, withdrawal, transfer) generates a `Transaction` record, which is stored in the `ATMManager`. This is a fundamental requirement for any auditable financial system.
+*   **Secure Transfer Logic:** The transfer operation is handled as a single, atomic action within the `ATMManager`, ensuring that both the withdrawal from the sender and the deposit to the receiver are processed correctly.
+*   **Single Responsibility:** The `Account` class is responsible only for its own state, while the `ATMManager` handles the complex interactions between multiple accounts (e.g., transfers).
+
+### Code Example: Withdrawal Validation
+
+```java
+public void withdraw(double amount) {
+    // Critical check to prevent negative balances (overdraft)
+    if (balance < amount) {
+        throw new IllegalArgumentException("Insufficient balance for withdrawal.");
+    }
+    this.balance -= amount;
+    // ... record transaction
+}
+```
 
 ---
 
-## 📈 Project Stats
+## 4. How to Run
 
-![Lines of Code](https://img.shields.io/badge/Lines%20of%20Code-~350-blue)
-![Classes](https://img.shields.io/badge/Classes-4-green)
-![Methods](https://img.shields.io/badge/Methods-15+-orange)
+### Prerequisites
+*   Java Development Kit (JDK) 8 or higher
 
-**Made with ❤️ and Java**
+### Installation and Execution
+
+1.  **Clone the repository** (Assuming a standard project structure).
+2.  **Compile the project:**
+    ```bash
+    javac *.java
+    ```
+
+3.  **Run the application:**
+    ```bash
+    java MainATM
+    ```
+
+### Sample Workflow
+
+```
+========= Welcome to SimpleATM =========
+...
+4. Transfer Money
+...
+Enter choice: 4
+Enter Sender Account ID: ACC001
+Enter Receiver Account ID: ACC002
+Enter Transfer Amount: 1000
+Transfer successful!
+Sender balance: 4500.00 | Receiver balance: 6000.00
+```
+
+---
+
+## 5. Limitations and Future Enhancements
+
+### Known Limitations
+
+*   **Persistence:** Data is stored in memory only and is lost upon application exit.
+*   **Security:** Lacks a user authentication (PIN/password) system.
+*   **Concurrency:** Not designed for multi-user concurrent access.
+
+### What I'd Do Next
+
+*   Implement **database persistence** (e.g., using JDBC) or file-based storage for permanent data storage.
+*   Add a **user authentication** and PIN system for security.
+*   Develop a **Graphical User Interface (GUI)** using JavaFX or Swing.
+*   Implement **Unit Tests** using JUnit to ensure the integrity of all financial transactions and business rules.
+*   Introduce **account types** (e.g., Savings, Checking) with different business rules (e.g., interest calculation).
+
+---
+
+## 6. Contact and License
+
+### Author
+
+**Muhammad Ahmad**
+
+*   GitHub: [@muhammad-ahmadp](https://github.com/muhammad-ahmadp)
+*   LinkedIn: [muhammad-ahmadcs](https://linkedin.com/in/muhammad-ahmadcs)
+
+### License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+### Acknowledgments
+
+This project was built to demonstrate the implementation of robust financial transaction logic and state management within a core Java application.
