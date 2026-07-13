@@ -7,7 +7,7 @@ public class Account {
     private double balance;
 
     /**
-     * Creates a new Account with validation.
+     * Creates a new Account with validation. This is java practice project
      *
      * @param accountId Unique account identifier
      * @param ownerName Name of the account owner
